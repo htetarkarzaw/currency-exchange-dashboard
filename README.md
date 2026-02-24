@@ -2,6 +2,8 @@
 
 A cryptocurrency dashboard powered by the [CoinRanking API](https://coinranking.com/api/documentation). Track prices, market caps, and 24h changes with search, filters, and offline support.
 
+> **About this project** – Built as a practice project for **vibe coding** with [Cursor AI](https://cursor.com). Exploring AI-assisted development: describing features in natural language, iterating with the AI pair programmer, and shipping a full-stack app from idea to deployment.
+
 ## Features
 
 - **List view** – Paginated coin table with rank, symbol, name, price, change %, market cap
