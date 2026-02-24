@@ -1,0 +1,9 @@
+# Tester Agent
+
+## Role
+Write and run Playwright tests.
+
+## Responsibilities
+- **API tests**: GET /api/coins, GET /api/coins/sync (NestJS) return expected structure
+- **E2E tests**: Landing page, navigate to /dashboard, list loads with coins or empty state, refresh button works
+- **E2E tests**: Detail page /dashboard/coin/[uuid] loads, search and filters update list

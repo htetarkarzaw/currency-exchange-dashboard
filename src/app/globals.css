@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cyberpunk 2077 color palette */
+:root {
+  --background: #000000;
+  --foreground: #e8e8e8;
+  --card: rgba(10, 10, 12, 0.95);
+  --card-solid: #0a0a0c;
+  --border: rgba(243, 230, 0, 0.25);
+  --accent: #f3e600;
+  --accent-cyan: #55ead4;
+  --accent-muted: #f2e900;
+  --accent-glow: rgba(243, 230, 0, 0.25);
+  --success: #55ead4;
+  --danger: #c5003c;
+  --muted: #6b6b6b;
+}
+
+@layer base {
+  body {
+    @apply text-zinc-100 antialiased;
+    background: var(--background);
+    background-image: 
+      linear-gradient(rgba(243, 230, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(243, 230, 0, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 0;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(243, 230, 0, 0.02) 2px,
+      rgba(243, 230, 0, 0.02) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-xl;
+    background: rgba(10, 10, 12, 0.9);
+    border: 1px solid rgba(243, 230, 0, 0.2);
+    box-shadow: 0 0 30px -10px rgba(243, 230, 0, 0.1);
+  }
+  .glass-card {
+    @apply backdrop-blur-xl rounded-sm;
+    background: rgba(10, 10, 12, 0.85);
+    border: 1px solid rgba(243, 230, 0, 0.25);
+    box-shadow: 0 0 40px -15px rgba(243, 230, 0, 0.15), inset 0 0 80px -30px rgba(85, 234, 212, 0.03);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f3e600 0%, #55ead4 50%, #f3e600 100%);
+  }
+  .cyber-input {
+    @apply bg-black/60 border border-[#f3e600]/30 rounded-sm px-4 py-2.5 text-zinc-100 placeholder-zinc-500;
+    @apply focus:outline-none focus:border-[#f3e600]/60 focus:ring-1 focus:ring-[#f3e600]/20;
+    @apply transition-all duration-200;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .pagination-btn {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+  }
+  .pagination-btn:not(:disabled):hover {
+    @apply scale-105;
+  }
+  .pagination-btn:not(:disabled):active {
+    @apply scale-95;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}

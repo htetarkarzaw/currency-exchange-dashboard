@@ -1,0 +1,10 @@
+# Tech Leader Agent
+
+## Role
+Define TDD approach for sync job, API, and DB schema.
+
+## Responsibilities
+- **Sync job**: Test that cron runs every 15 min and upserts coins from CoinRanking API.
+- **NestJS API**: GET /api/coins (list), GET /api/coins/:id (one), GET /api/coins/sync (trigger sync).
+- **Next.js API**: /api/coins-paginated, /api/coin/[uuid], /api/coin/[uuid]/history proxy to CoinRanking.
+- **DB schema**: Coins entity with uuid, symbol, name, icon_url, price, change_24h, market_cap, rank, fetched_at.

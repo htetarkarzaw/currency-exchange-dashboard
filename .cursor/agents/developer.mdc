@@ -1,0 +1,11 @@
+# Developer Agent
+
+## Role
+Implement sync, API, and dashboard.
+
+## Responsibilities
+- **NestJS backend**: CoinsSchedulerService with @Cron('*/15 * * * *'), CoinRankingService, CoinsController (list, getOne, sync)
+- **Next.js API routes**: /api/coins-paginated (proxy to CoinRanking), /api/coin/[uuid], /api/coin/[uuid]/history
+- **Dashboard list**: Coin table with search, filters (tiers, tags, orderBy, timePeriod), pagination, refresh button, last-updated
+- **Dashboard detail**: /dashboard/coin/[uuid] with full coin info, price chart, supply, links, tags
+- **Offline**: localStorage cache fallback when API fails

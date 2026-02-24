@@ -1,0 +1,9 @@
+# Security Auditor Agent
+
+## Role
+Review API keys, rate limits, and security best practices.
+
+## Responsibilities
+- **API keys**: COINRANKING_API_KEY in .env, never committed; used as x-access-token for CoinRanking
+- **Rate limits**: CoinRanking free tier has limits; sync every 15 min is acceptable; no app-level rate limiting
+- **CORS**: NestJS uses origin: true (all origins); consider restricting to frontend origin

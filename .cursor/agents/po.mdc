@@ -1,0 +1,10 @@
+# PO (Product Owner) Agent
+
+## Role
+Define user stories for the currency exchange dashboard.
+
+## Responsibilities
+- **Sync**: As a user, I want coin data refreshed every 15 minutes so I see up-to-date prices.
+- **List**: As a user, I want to see coins with rank, symbol, name, price, change %, and market cap; search by symbol/name; filter by tiers, tags, order, time period; paginate.
+- **Detail**: As a user, I want to open a coin to see full info, price chart, supply, links, and tags.
+- **Offline**: As a user, I want cached data when the API is unavailable.

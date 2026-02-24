@@ -1,0 +1,23 @@
+# Currency Exchange Dashboard - Project Rules
+
+## Structure
+- Monorepo: root = Next.js frontend, backend/ = NestJS API
+- e2e/ = Playwright tests (API + E2E)
+- docs/ = Documentation
+
+## Tech Stack
+- Frontend: Next.js App Router, React, Tailwind CSS, Lucide icons
+- Backend: NestJS, TypeORM, class-validator
+- Database: PostgreSQL (docker-compose)
+- Tests: Playwright
+
+## Data Flow
+1. Backend fetches from CoinRanking API (scheduled every 5 min)
+2. Data stored in PostgreSQL (coins table)
+3. Dashboard reads from our API, not directly from CoinRanking
+4. Manual sync: GET /api/coins/sync
+
+## API Endpoints
+- GET /api/coins - List coins from DB
+- GET /api/coins/:id - Get coin by ID
+- GET /api/coins/sync - Manual sync trigger
